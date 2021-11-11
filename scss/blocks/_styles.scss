@@ -1,0 +1,170 @@
+.styles {
+	padding: 130px 0 100px;
+	background: $primary;
+
+	@media (max-width: 768px) {
+		padding: 50px 0 85px;
+	}
+
+	&__inner {}
+
+	&__title {
+		margin-bottom: 50px;
+	}
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&__slider {
+
+	}
+
+	&__slide {}
+}
+
+
+.slide-styles {
+
+	&__big {
+		display: flex;
+		margin: 0 -15px;
+		height: 100%;
+
+		@media (max-width: 768px) {
+			padding-bottom: 63%;
+		}
+	}
+
+	&__col {
+		flex: 0 1 50%;
+		padding: 0 15px;
+
+		@media (max-width: 768px) {
+			flex: 0 1 100%;
+
+		}
+
+		&--sm {
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+
+	&__body {
+		display: flex;
+	}
+
+	&__image {
+		display: block;
+		position: relative;
+	}
+
+	&__mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, 0.45);
+		opacity: 0;
+		transition: .2s linear;
+
+		@media (max-width: 768px) {
+			align-items: flex-end;
+			opacity: 1;
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.55) 81.73%),
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__label {
+		position: relative;
+		padding-left: 55px;
+		font-weight: 900;
+		font-size: 30px;
+		line-height: 140%;
+		color: $white;
+		text-transform: uppercase;
+
+		@media (max-width: 768px) {
+			font-size: 20px;
+			margin-bottom: 25px;
+		}
+
+		@media (max-width: 550px) {
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 45px;
+			height: 1px;
+			background-color: $secondary;
+		}
+	}
+
+	&__row {
+		position: relative;
+		padding-bottom: 43.5%;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+
+		&+& {
+			margin-top: 15px;
+		}
+
+	}
+}
+
+.pagination-styles {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	bottom: -55px;
+	transition: .2s linear;
+
+	@media (max-width: 768px) {
+		bottom: -35px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.swiper-pagination-bullet {
+		display: block;
+		width: 15px;
+		height: 15px;
+		margin-right: 25px;
+		background-color: $white;
+		cursor: pointer;
+
+		@media (max-width: 768px) {
+			width: 8px;
+			height: 8px;
+			
+		}
+
+		&-active {
+			width: 25px;
+			height: 25px;
+
+			@media (max-width: 768px) {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+}

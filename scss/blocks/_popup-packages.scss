@@ -1,0 +1,174 @@
+.packages {
+
+	&__popup {}
+}
+
+.popup-packages {
+
+	&__close {
+		@media (max-width: 768px) {
+			right: 44px;
+		}
+	}
+
+	&__body {
+	}
+	
+	&__content {
+		padding: 30px 90px;
+		max-width: 920px;
+
+		@media (max-width: 768px) {
+			padding: 30px 22px;
+		}
+
+		@media (max-width: 550px) {
+			height: 440px;
+		}
+	}
+
+	&__inner {
+		@media (max-width: 768px) {
+			overflow-y: scroll;
+			&::-webkit-scrollbar {
+				width: 7px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: $primary;
+				border: 1px solid $secondary;
+				border-radius: 10px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $secondary;
+				border-radius: 10px;
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: 50px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 140%;
+		text-transform: uppercase;
+		color: $white;
+
+		@media (max-width: 768px) {
+			margin-bottom: 20px;
+			font-size: 18px;
+		}
+
+		@media (max-width: 550px) {
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
+	}
+
+	&__row {
+		display: flex;
+		margin-bottom: 70px;
+
+		@media (max-width: 768px) {
+			height: 270px;
+			margin: 0;
+		}
+		
+		@media (max-width: 550px) {
+			flex-direction: column;
+			// height: calc(100vh - 160px);
+			height: 300px;
+		}
+	}
+
+	&__col {
+		text-align: left;
+		
+
+		&--a {
+			flex: 0 1 230px;
+			margin-right: 70px;
+
+			@media (max-width: 550px) {
+				margin: 0 0 10px 0;
+				flex: auto;
+			}
+		}
+
+		&--b {
+			flex: 0 1 440px;
+
+			@media (max-width: 550px) {
+				flex: auto;
+			}
+		}
+	}
+
+	&__included {
+		margin-bottom: 5px;
+		font-size: 20px;
+		line-height: 140%;
+		font-weight: 400;
+		color: $secondary;
+
+		@media (max-width: 550px) {
+			font-size: 16px;
+		}
+	}
+
+	&__list {
+		text-align: left;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 140%;
+		color: $white;
+	}
+	
+	&__item {
+		position: relative;
+		padding-left: 13px;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 140%;
+		color: $white;
+
+		@media (max-width: 550px) {
+			font-size: 14px;
+		}
+
+		&::before {
+			content: '-';
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+
+		@media (max-width: 768px) {
+			padding-top: 20px;
+		}
+	}
+
+	&__btn {
+		& + & {
+			margin-left: 30px;
+
+			@media (max-width: 768px) {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+.popup {
+
+	&__body {}
+
+	&__content {}
+
+	&__close {}
+}

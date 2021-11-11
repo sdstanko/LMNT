@@ -1,0 +1,297 @@
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	padding: 19px 0;
+	color: $white;
+	transition: .2s linear;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 320px;
+		height: 70px;
+		z-index: 2;
+		background-color: $primary;
+		transform: translateX(100%);
+		transition: .2s linear;
+
+		@media (min-width: 768.02px) {
+			display: none;
+		}
+	}
+
+	&.active {
+		&::before {
+			transform: translateX(0);
+		}
+	}
+
+	&--examples {
+		padding: 2px 0 !important;
+		background-color: $primary !important;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+
+		@media (max-width: 768px) {
+			justify-content: space-between;
+		}
+	}
+
+	&__logo {
+		margin-right: 64px;
+		transition: .2s linear;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	&__image {
+		@media (max-width: 768px) {
+			width: 98px;
+		}
+
+		@media (max-width: 500px) {
+			width: 50px;
+		}
+	}
+
+	&__nav {}
+
+	&__contact {
+		position: relative;
+		padding-right: 28px;
+		color: inherit;
+		text-decoration: none;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 50%;
+			right: 8px;
+			width: 11px;
+			height: 2px;
+			background-color: $white;
+			transform: rotate(35deg) translateY(-50%);
+			border-radius: 2px;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: 50%;
+			right: 0;
+			width: 11px;
+			height: 2px;
+			background-color: $white;
+			transform: rotate(-35deg) translateY(-50%);
+			border-radius: 2px;
+		}
+	}
+}
+
+.nav {
+	position: relative;
+	flex: 1 1 auto;
+
+	@media (max-width: 768px) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 320px;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-bottom: 10px;
+		transform: translateX(100%);
+		background-color: $primary;
+		transition: .2s linear;
+	}
+
+	@media (max-width: 600px) {
+		padding-bottom: 150px;
+	} 
+
+	@media (max-width: 450px) {
+		width: 100%;
+	}
+
+	&.active {
+		transform: translateX(0%);
+		overflow: auto;
+	}
+
+	&__list {
+		display: flex;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			flex: 1 1 auto;
+			padding-top: 125px;
+			margin-bottom: 40px;
+			padding-right: 22px;
+			text-align: right;
+		}
+	}
+
+	&__item {
+		&+& {
+			margin-left: 35px;
+
+			@media (max-width: 900px) {
+				margin-left: 25px;
+			}
+
+			@media (max-width: 768px) {
+				margin: 50px 0 0 0;
+			}
+		}
+	}
+
+	&__link {
+		position: relative;
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			&::before {
+				width: 100%;
+			}
+		}
+
+		&::before {
+			position: absolute;
+			content: '';
+			bottom: -3px;
+			left: 0;
+			height: 1px;
+			width: 0;
+			background-color: $secondary;
+			transition: width .2s linear;
+		}
+	}
+}
+
+.tablet-header {
+	max-width: 260px;
+	margin: 0 auto;
+	display: none;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+
+	&__btn {
+		width: 260px;
+		margin-bottom: 30px;
+	}
+
+	&__row {
+		position: relative;
+		z-index: 3;
+		max-width: 260px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__social {
+		width: 25px;
+		height: 25px;
+	}
+
+	&__icon {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+.burger {
+	display: none;
+	width: 52px;
+	height: 32px;
+	position: relative;
+	cursor: pointer;
+	z-index: 3;
+	transition: .2s linear;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+
+	@media (max-width: 500px) {
+		width: 27px;
+		height: 16px;
+	}
+
+	span {
+		position: absolute;
+		top: 15px;
+		display: block;
+		background-color: $white;
+		width: 100%;
+		height: 3px;
+
+		@media (max-width: 500px) {
+			height: 2px;
+			top: 7px;
+		}
+	}
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 3px;
+		background-color: $white;
+
+		@media (max-width: 500px) {
+			height: 2px;
+		}
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+
+	&.active {
+		position: absolute;
+		top: 30px;
+		right: 15px;
+		width: 25px;
+		height: 25px;
+
+		span {
+			transform: scale(0);
+		}
+
+		&::before {
+			height: 2px;
+			transform: rotate(-45deg);
+			top: 11px;
+		}
+
+		&::after {
+			height: 2px;
+			transform: rotate(45deg);
+			top: 11px;
+		}
+	}
+}

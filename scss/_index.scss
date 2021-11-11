@@ -1,0 +1,82 @@
+.intro {
+	height: 100vh;
+	padding-top: 80px;
+	padding-bottom: 30px;
+	background: url('../images/intro-bg.jpg') center no-repeat;
+	background-size: cover;
+
+	@media (max-width: 768px) {
+		background: url('../images/intro-bg-md.jpg') center no-repeat;
+		background-size: cover;
+	}
+
+	@media (max-width: 550px) {
+		background: url('../images/intro-bg-sm.jpg') center no-repeat;
+		background-size: cover;
+	}
+
+	&__inner {}
+
+	&__content {
+		margin-top: 230px;
+		max-width: 683px;
+
+		@media (max-width: 768px) {
+			margin-top: 300px;
+		}
+
+		@media (max-width: 550px) {
+			margin-top: 135px;
+		}
+
+		@media (max-height: 415px) {
+			margin-top: 50px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 10px;
+
+		@media (max-width: 768px) {
+			margin-bottom: 15px;
+			font-size: 30px;
+		}
+
+		@media (max-width: 450px) {
+			font-size: 17px;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 40px;
+		font-weight: 300;
+		font-size: 28px;
+	 	line-height: 140%;
+		letter-spacing: 0.02em;
+		color: $white;
+
+		@media (max-width: 768px) {
+			margin-bottom: 30px;
+			font-size: 25px;
+		}
+
+		@media (max-width: 450px) {
+			font-size: 16px;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+	}
+
+	&__button {
+
+		& + & {
+			margin-left: 30px;
+
+			@media (max-width: 768px) {
+				margin-left: 20px;
+			}
+		}
+	}
+}

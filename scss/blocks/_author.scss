@@ -1,0 +1,131 @@
+.author {
+
+	&__inner {
+		display: flex;
+		background-color: $primary;
+
+		@media (max-width: 550px) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		flex: 0 0 100%;
+		margin: 30px 0;
+		background-color: #fff;
+
+		@media (max-width: 768px) {
+			margin: 15px 0;
+		}
+
+		@media (max-width: 550px) {
+			margin: 0;
+		}
+	}
+
+	&__body {
+		padding: 100px 0;
+		width: 650 / 1170 * 100%;
+
+		@media (max-width: 768px) {
+			padding: 50px 0;
+		}
+
+		@media (max-width: 550px) {
+			width: 100%;
+			padding-bottom: 15px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 30px;
+
+		@media (max-width: 768px) {
+			margin-bottom: 11px;
+		}
+	}
+
+	&__text,
+	&__description {
+		padding-left: 44px;
+		padding-right: 50px;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 140%;
+		color: #3D3D3D;
+
+		@media (max-width: 768px) {
+			font-size: 17px;
+		}
+
+		@media (max-width: 550px) {
+			padding-right: 0;
+		}
+	}
+
+	&__text {
+		position: relative;
+		margin-bottom: 15px;
+
+		&::before {
+			content: 'Что это';
+			position: absolute;
+			left: -26px;
+			top: 30px;
+			transform: rotate(90deg);
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 140%;
+			text-transform: uppercase;
+			color: #3D3D3D;
+		}
+	}
+
+	&__description {
+		position: relative;
+		margin-bottom: 25px;
+
+		@media (max-width: 550px) {
+			margin: 0;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			width: 3px;
+			height: calc(100% - 15px);
+			transform: translateY(-50%);
+			background-color: $primary;
+		}
+	}
+
+	&__btn {
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	&__image {
+		transform: translateX(-100%);
+		flex: 0 0 638 / 1440 * 100%;
+
+		@media (max-width: 991px) {
+			flex: 0 0 50%;
+		}
+
+		@media (max-width: 550px) {
+			transform: translateX(0);
+			flex: 0 0 100%;
+			padding-bottom: 75.3%;
+
+			background-image: url('../images/author-sm.jpg') !important;
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
