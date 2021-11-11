@@ -406,7 +406,8 @@ html, body {
 
 .nav.active {
   transform: translateX(0%);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .nav__list {
